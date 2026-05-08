@@ -6,7 +6,7 @@ const Orders = () => {
   const [orders,setOrders] = useState([]);
 
   useEffect(()=>{                                     //fetching Orders data from below URL (fetches everytime a change is made in database)
-    axios.get("http://localhost:8080/allOrders").then((res)=>{
+    axios.get("https://zerodha-clone-backend-8wvz.onrender.com/allOrders").then((res)=>{
       setOrders(res.data);
     })
   });
@@ -41,7 +41,7 @@ const Orders = () => {
               {orders.map((stock,index)=>{
 
                 const cancelOrder = ()=>{     //to send delete request on below URL
-                  axios.delete(`http://localhost:8080/delete/${stock._id}`);
+                  axios.delete(`https://zerodha-clone-backend-8wvz.onrender.com/delete/${stock._id}`);
                 }
 
                 return(
