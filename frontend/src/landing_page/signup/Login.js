@@ -27,7 +27,7 @@ export default function Login(){
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try{
-            const {data} = await axios.post("http://localhost:8080/login",{
+            const {data} = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com/login",{
                 email: email,
                 password: password,
             },
@@ -37,7 +37,7 @@ export default function Login(){
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => {
-                window.location.href="http://localhost:3001/";      //to load the following URL
+                window.location.href="https://zerodha-clonedashboard.netlify.app/";      //to load the following URL
                 }, 1000);
             } else {
                 handleError(message);
