@@ -41,7 +41,7 @@ const Dashboard = () => {
   const [holdings,setHoldings] = useState([]);
 
   useEffect(()=>{       //fetching holdings data from the below URL
-    axios.get("http://localhost:8080/allHoldings").then((res)=>{
+    axios.get("https://zerodha-clone-backend-8wvz.onrender.com/allHoldings").then((res)=>{
       setHoldings(res.data);
     });
   },[]);
