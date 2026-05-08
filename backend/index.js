@@ -15,7 +15,7 @@ const Port = process.env.PORT || 8080;
 const Mongo_URL = process.env.MONGO_URL;
 
 app.use(cors({                              //----- Middlewares -----
-    origin: [`http://localhost:3000`,`http://localhost:3001`],
+    origin: [`https://zerodha-clone-webapp.netlify.app/`,`https://zerodha-clonedashboard.netlify.app/`],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   }));                
