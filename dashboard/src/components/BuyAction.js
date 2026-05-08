@@ -13,7 +13,7 @@ export default function BuyAction({handleCancel,stockOrder,setShowAlert}){
     }
 
     const confirmBuy = ()=>{        //Sending Order data on below URL
-        axios.post("http://localhost:8080/newOrder",{
+        axios.post("https://zerodha-clone-backend-8wvz.onrender.com/newOrder",{
             name : stockOrder.name,
             curr_price: stockOrder.price,
             target_price : price,
