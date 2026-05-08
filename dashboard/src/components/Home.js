@@ -14,11 +14,11 @@ const Home = () => {
   useEffect(()=>{                           //to prevent Users without Login
     const verifyCookie = async ()=>{
       if(!cookies.token){
-        window.location.href="http://localhost:3000/login";
+        window.location.href="https://zerodha-clone-webapp.netlify.app/login";
         return;
       }
       try{
-        const { data } = await axios.post("http://localhost:8080", {}, { withCredentials: true });
+        const { data } = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com", {}, { withCredentials: true });
         
         const { status, user } = data;
         if(status){
@@ -28,11 +28,11 @@ const Home = () => {
         });
         }else{
           removeCookie("token"); 
-          window.location.href="http://localhost:3000/login";
+          window.location.href="https://zerodha-clone-webapp.netlify.app/login";
         }
       }catch(err){
         console.error(err);
-        window.location.href="http://localhost:3000/login";
+        window.location.href="https://zerodha-clone-webapp.netlify.app/login";
       }
     };
     verifyCookie();
