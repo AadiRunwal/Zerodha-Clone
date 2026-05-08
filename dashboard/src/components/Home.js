@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(()=>{                           //to prevent Users without Login
     const verifyCookie = async ()=>{
       if(!cookies.token){
-        window.location.href="https://zerodha-clone-webapp.netlify.app/login";
+        window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
         return;
       }
       try{
@@ -28,11 +28,11 @@ const Home = () => {
         });
         }else{
           removeCookie("token"); 
-          window.location.href="https://zerodha-clone-webapp.netlify.app/login";
+          window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
         }
       }catch(err){
         console.error(err);
-        window.location.href="https://zerodha-clone-webapp.netlify.app/login";
+        window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
       }
     };
     verifyCookie();
