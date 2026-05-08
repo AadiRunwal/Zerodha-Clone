@@ -23,7 +23,7 @@ const Menu = ({username}) => {
   const handleLogout = ()=>{
     console.log(cookies);
     removeCookies("token");
-    window.location.href="http://localhost:3000/login";
+    window.location.href="https://zerodha-clone-webapp.netlify.app/login";
   }
 
   return (
