@@ -1,0 +1,11 @@
+import Hero from "./Hero";
+import Brokerage from "./Brokerage";
+
+export default function PricingPage(){
+    return(
+        <div>
+            <Hero></Hero>
+            <Brokerage></Brokerage>
+        </div>
+    )
+}

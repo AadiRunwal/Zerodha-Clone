@@ -1,0 +1,136 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body a{
+  text-decoration: none;
+  font-weight: 500;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ----- Heading & Sub-Heading [Home] ----- */
+.heading{
+  font-size: 1.7em;
+  opacity: 0.8;
+  margin-bottom: 1.8em;
+}
+.subHeading{
+  font-size: 1.4em;
+  opacity: 0.8;
+  margin-bottom: 0.6em;
+}
+.point{
+  margin-bottom: 1.5em;
+  line-height: 1.6em;
+}
+.btn{
+  background-color: #397dd0;
+  color: white;
+}
+
+/* ----- [Pricing] ----- */
+.pricing-heading{
+  font-size: 1.1em;
+  font-weight: 400;
+  margin: 1.4em 0;
+}
+.pricing-text{
+  font-size: 0.8em;
+  line-height: 1.7em;
+  margin-bottom: 1em;
+}
+
+/* -----Dropdown [Support] ----- */
+.dropDown{
+  background-color: white;
+  color: black;
+  font-size: 1.2em;
+  width: 100%;
+  text-align: start;
+  margin: 0.8em 0.6em;
+  padding: 0.8em 0;
+  border-radius: 0;
+  transition: all 0.2s;
+}
+.dropDown .bi{
+  color: #397dd0;
+  background-color: aliceblue;
+  font-size: 1em;
+  margin-right:0.5em;
+  padding: 0.85em 1em;
+}
+.dropdown-menu{
+  position: relative !important;
+  transform: translate3d(10px, 1px, 1px) !important;
+
+}
+.dropdown-item li{
+  list-style: disc !important;
+  margin-left: 1em;
+}
+.dropdown-item{
+  color: #0d6efd;
+}
+.dropdown-toggle::after{
+  /* display: none; */
+  color: #0d6efd ;
+  margin-left: 2em;
+}
+.dropDown:hover{
+  scale: 1.02;
+}
+
+/* ----- Navbar ----- */
+.nav-item{
+  margin-right: 1em;
+}
+
+/* ----- Footer ------ */
+footer{
+  background-color: rgb(250,250,250);
+}
+.footer-heading{
+  font-size: 1.3em;
+  opacity: 0.8;
+  margin-bottom: 1.2em;
+}
+.footer-point{
+  font-size: 1em;
+  margin-bottom: 1em;
+  opacity: 0.8;
+}
+.footer-text{
+  font-size: 0.7em;
+  font-weight: 400;
+  line-height: 1.6em;
+  opacity: 0.6;
+  margin-left: 1.5em;
+  margin-right: 1.5em;
+}
+.social-media .bi{
+  font-size: 1.3em;
+  opacity: 0.7;
+  margin-bottom: 1.8em;
+}
+.footer-link{
+  font-size: 0.8em;
+  font-weight: 600;
+  margin: 0 1em 0 1em;
+  color: black;
+  opacity: 0.4;
+}
+
+form{
+  border: 1px solid black;
+  border-radius: 0.5em;
+  padding: 1em;
+  box-shadow: 2px 2px 20px black;
+}
