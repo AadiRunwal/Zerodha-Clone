@@ -37,7 +37,7 @@ export default function Login(){
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => {
-                window.location.href="https://zerodha-clonedashboard.netlify.app/";      //to load the following URL
+                window.location.href="https://zerodha-clone-dashboard-mscp.onrender.com";      //to load the following URL
                 }, 1000);
             } else {
                 handleError(message);
