@@ -31,12 +31,12 @@ export default function Signup(){
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try{
-            const {data} = await axios.post("http://localhost:8080/signup",{...inputValue},{ withCredentials: true });
+            const {data} = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com/signup",{...inputValue},{ withCredentials: true });
             const {success,message} = data;
             if (success) {
                 handleSuccess(message);
                 setTimeout(() => {
-                window.location.href="http://localhost:3001/";      //to load the following URL
+                window.location.href="https://zerodha-clonedashboard.netlify.app/";      //to load the following URL
                 }, 1000);
             } else {
                 handleError(message);
