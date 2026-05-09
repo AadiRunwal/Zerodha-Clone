@@ -3,9 +3,9 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
 module.exports.isLoggedIn = (req,res)=>{        //to check if any token is available on browser (is user logged in)
-    const token = req.cookies.token;
+    const token = req.body.token;
     if(!token){
-        return res.json({status: false});
+        res.json({status:false});
     }
 
     jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
