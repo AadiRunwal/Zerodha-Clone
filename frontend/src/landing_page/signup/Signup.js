@@ -31,12 +31,14 @@ export default function Signup(){
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try{
-            const {data} = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com/signup",{...inputValue},{ withCredentials: true });
-            const {success,message} = data;
+            const {data} = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com/signup",{...inputValue});
+            
+            const {success,message,token} = data;
             if (success) {
                 handleSuccess(message);
+                localStorage.setItem("token",token);
                 setTimeout(() => {
-                window.location.href="https://zerodha-clone-dashboard-mscp.onrender.com";      //to load the following URL
+                window.location.href=`https://zerodha-clone-dashboard-mscp.onrender.com/?token=${token}`;      //to load the following URL [sending token in URL]
                 }, 1000);
             } else {
                 handleError(message);
