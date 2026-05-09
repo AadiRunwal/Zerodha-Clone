@@ -49,7 +49,7 @@ module.exports.Login = async (req,res,next)=>{
             success: true, 
             message: "User Logged in successfully", 
             token,                      //sending token to User's Browser [stored in LocalStorage]
-            user: newUser.username 
+            user: user.username 
         });
         next();
 
