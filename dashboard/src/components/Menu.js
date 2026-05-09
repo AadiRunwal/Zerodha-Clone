@@ -20,7 +20,7 @@ const Menu = ({username}) => {
 
   const handleLogout = ()=>{              //----- for Logout Button -----
     localStorage.removeItem("token");
-    window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
+    window.location.href="https://zerodha-clone-uqzt.onrender.com/Login";
   }
 
   return (
