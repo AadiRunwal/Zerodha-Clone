@@ -13,13 +13,13 @@ module.exports.Signup = async (req,res,next)=>{
 
         const newUser = await Users.create({email,username,password,createdAt});    //storing User data in database
         const token = createSecretToken(newUser._id);
-        res.cookie("token", token, {                    //creating and sending token to client's browser
-        httpOnly: false,
-        secure: true,
-        sameSite: "None"
+        
+        res.status(201).json({ 
+            success: true, 
+            message: "User Signed in successfully", 
+            token,                      //sending token to User's Browser [stored in LocalStorage]
+            user: newUser.username 
         });
-
-        res.status(201).json({ message: "User signed in successfully", success: true, newUser });
         next();
 
     }catch(err){
@@ -44,12 +44,13 @@ module.exports.Login = async (req,res,next)=>{
         }
 
         const token = createSecretToken(user._id);      //creating and sending token to client's browser
-        res.cookie("token", token, {
-        httpOnly: false,
-        secure: true,
-        sameSite: "None"
+
+        res.status(201).json({ 
+            success: true, 
+            message: "User Logged in successfully", 
+            token,                      //sending token to User's Browser [stored in LocalStorage]
+            user: newUser.username 
         });
-        res.status(201).json({ message: "User logged in successfully", success: true });
         next();
 
     }catch(err){
