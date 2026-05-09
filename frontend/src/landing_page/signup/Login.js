@@ -30,14 +30,14 @@ export default function Login(){
             const {data} = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com/login",{
                 email: email,
                 password: password,
-            },
-            { withCredentials: true });
+            });
 
-            const {success,message} = data;
+            const {success,message,token} = data;
             if (success) {
                 handleSuccess(message);
+                localStorage.setItem("token",token);
                 setTimeout(() => {
-                window.location.href="https://zerodha-clone-dashboard-mscp.onrender.com";      //to load the following URL
+                window.location.href=`https://zerodha-clone-dashboard-mscp.onrender.com/?token=${token}`;      //to load the following URL [sending token in URL]
                 }, 1000);
             } else {
                 handleError(message);
