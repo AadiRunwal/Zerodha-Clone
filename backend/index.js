@@ -17,7 +17,6 @@ app.use(cors({                              //----- Middlewares -----
     origin: [`https://zerodha-clone-uqzt.onrender.com`,`https://zerodha-clone-dashboard-mscp.onrender.com`],
     methods: ["GET", "POST", "PUT", "DELETE"],
 }));                
-app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.json());
 
