@@ -11,6 +11,8 @@ export default function Signup(){
         password: ""
     });
 
+    const [loading,setLoading] = useState(false);       //to display Loading
+    
     const{email,username,password} = inputValue;
     const handleOnChange = (e)=>{
         const {name,value} = e.target;
@@ -31,6 +33,7 @@ export default function Signup(){
     const handleSubmit = async (e)=>{
         e.preventDefault();
         try{
+            setLoading(true);
             const {data} = await axios.post("https://zerodha-clone-backend-8wvz.onrender.com/signup",{...inputValue});
             
             const {success,message,token} = data;
@@ -38,13 +41,16 @@ export default function Signup(){
                 handleSuccess(message);
                 localStorage.setItem("token",token);
                 setTimeout(() => {
-                window.location.href=`https://zerodha-clone-dashboard-mscp.onrender.com/?token=${token}`;      //to load the following URL [sending token in URL]
+                    setLoading(false);
+                    window.location.href=`https://zerodha-clone-dashboard-mscp.onrender.com/?token=${token}`;      //to load the following URL [sending token in URL]
                 }, 1000);
             } else {
+                setLoading(false);
                 handleError(message);
             }
         }catch(err){
             console.error(err);
+            setLoading(false);
         }
         
         setInputValue({
@@ -78,7 +84,15 @@ export default function Signup(){
                     <label htmlFor="floatingPassword" className="ms-2">Password</label>
                 </div>
             
-                <button type="submit" className="btn btn-primary my-3 ms-3 col-3">Submit</button>
+                <button type="submit" className="btn btn-primary my-3 ms-3 col-3" disabled={loading}>
+                    {loading ? 
+                        <>
+                            <span role="status">please wait... </span>
+                            <span class="spinner-border spinner-border-sm ms-2" ></span>
+                        </>
+                        : "Submit"
+                    } 
+                </button>
             </form>
             <div className="row col-lg-8 col-sm-6 text-center mt-2">
                 <p className="fs-5">Already a user? <Link to={"/Login"}>Login</Link></p>
