@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {useCookies} from "react-cookie";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Button from '@mui/material/Button';
@@ -19,10 +18,8 @@ const Menu = ({username}) => {
   const menuClass = "menu";
   const activeMenuClass = "menu selected";
 
-  const [cookies, removeCookies] = useCookies(["token"]);     //for Logout Button
-  const handleLogout = ()=>{
-    console.log(cookies);
-    removeCookies("token");
+  const handleLogout = ()=>{              //----- for Logout Button -----
+    localStorage.removeItem("token");
     window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
   }
 
