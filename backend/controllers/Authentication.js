@@ -14,7 +14,6 @@ module.exports.Signup = async (req,res,next)=>{
         const newUser = await Users.create({email,username,password,createdAt});    //storing User data in database
         const token = createSecretToken(newUser._id);
         res.cookie("token", token, {                    //creating and sending token to client's browser
-        withCredentials: true,
         httpOnly: false,
         secure: true,
         sameSite: "None"
@@ -46,7 +45,6 @@ module.exports.Login = async (req,res,next)=>{
 
         const token = createSecretToken(user._id);      //creating and sending token to client's browser
         res.cookie("token", token, {
-        withCredentials: true,
         httpOnly: false,
         secure: true,
         sameSite: "None"
