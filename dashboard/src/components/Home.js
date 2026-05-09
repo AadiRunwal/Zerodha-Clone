@@ -20,7 +20,7 @@ const Home = () => {
 
     const token = localStorage.getItem("token");
     if(!token){
-      window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
+      window.location.href="https://zerodha-clone-uqzt.onrender.com/Login";
       return;
     }
       
@@ -39,13 +39,13 @@ const Home = () => {
           });
         }else{
           localStorage.removeItem("token"); 
-          window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
+          window.location.href="https://zerodha-clone-uqzt.onrender.com/Login";
         }
       
       }catch(err){
         console.error(err);
         localStorage.removeItem("token");
-        window.location.href="https://zerodha-clone-uqzt.onrender.com/login";
+        window.location.href="https://zerodha-clone-uqzt.onrender.com/Login";
       }
     };
 
