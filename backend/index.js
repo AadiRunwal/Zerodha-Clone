@@ -5,7 +5,6 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const cookieParser = require("cookie-parser");
 const AuthenticationRoute = require("./Routes/AuthenticationRoute");
 const Holdings = require("./models/Holdings");
 const Positions = require("./models/Positions");
@@ -17,8 +16,7 @@ const Mongo_URL = process.env.MONGO_URL;
 app.use(cors({                              //----- Middlewares -----
     origin: [`https://zerodha-clone-uqzt.onrender.com`,`https://zerodha-clone-dashboard-mscp.onrender.com`],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  }));                
+}));                
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(express.json());
