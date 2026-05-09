@@ -21,12 +21,12 @@ root.render(
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Homepage />}></Route>
-        <Route path="/Signup" element={<Signup />}></Route>
-        <Route path='/Login' element={<Login />}></Route>
-        <Route path='/About' element={<About />}></Route>
-        <Route path='/Products' element={<Products />}></Route>
-        <Route path='/Pricing' element={<Pricing />}></Route>
-        <Route path='/Support' element={<Support />}></Route>
+        <Route path="/signup" element={<Signup />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/products' element={<Products />}></Route>
+        <Route path='/pricing' element={<Pricing />}></Route>
+        <Route path='/support' element={<Support />}></Route>
         <Route path='*' element={<NotFound />}></Route>         
       </Routes>
       <Footer></Footer>
